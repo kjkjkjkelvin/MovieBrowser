@@ -41,6 +41,11 @@ const Favorites = () => {
     }
     useEffect(() => {
         fetchData();
+        try{
+            document.querySelector("#navbarTop .active").classList.remove('active')
+        }
+        catch(e){}
+        document.querySelector("#navbarTop .nav-favorites").classList.add('active')
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])//empty array for one-time loading
 

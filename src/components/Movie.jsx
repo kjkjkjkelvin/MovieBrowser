@@ -74,7 +74,6 @@ const Movie = () => {
                             <img src={posterUrl}  className="img-fluid shadow movie-img" alt={movieDetails.original_title} />
                         </div>
                         <div className="col-md-8 my-3 details-container position-relative">
-                            {/* <p className="fs-1 lead fw-bold mb-0"></p> */}
                             <p className="fs-1 lead fw-normal mb-0">
                                 <span className='fw-bold'>{movieDetails.title}</span>
                                 <span> {(movieDetails.title !== movieDetails.original_title)? `(${movieDetails.original_title})` : ''}</span>
@@ -85,7 +84,7 @@ const Movie = () => {
                                 <div className="single-chart">
                                     <svg viewBox="0 0 36 36" className={`circular-chart ${ratingColor()}`}>
                                         <path className="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                        <path className="circle" stroke-dasharray={`${movieDetails.vote_average*10}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path className="circle" strokeDasharray={`${movieDetails.vote_average*10}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                         <text x="18" y="22" className="percentage">{movieDetails.vote_average *10}%</text>
                                     </svg>
                                 </div>

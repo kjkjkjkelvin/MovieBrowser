@@ -51,7 +51,7 @@ export const AscendingDescending = ({isAscending,setIsAscending,movies,setMovies
     return <>
         <div className="row sort-container">
             <div className="col-md-12 col-sm-3 col-12">
-                <select class="form-select mb-2" aria-label="Default select example" onChange={(e) => setIsAscending(e.target.value === 'true')}>
+                <select className="form-select mb-2" aria-label="Default select example" onChange={(e) => setIsAscending(e.target.value === 'true')}>
                     <option value={true}>Ascending</option>
                     <option value={false}>Descending</option>
                 </select>
@@ -71,7 +71,7 @@ export const AscendingDescending = ({isAscending,setIsAscending,movies,setMovies
 
 export const Pagination = ({page,pageNumber,maxPage,setPageNumber}) => {
     return  <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
+                <ul className="pagination justify-content-center">
                     <li className="page-item">
                         <Link className={`btn btn-secondary rounded-0 border-end rounded-pill rounded-end ${parseInt(pageNumber) === parseInt(1) && 'disabled'}`} to={`/${page}/${parseInt(1)}`} onClick={() => setPageNumber(parseInt(1))}>First</Link>
                     </li>
@@ -137,6 +137,12 @@ const Search = ({ keyword, searchResults, isDataLoading, setSearchText, FetchMov
         setResultsHtml(ResultsBanner('Loading','offset-lg-2 col-lg-8 offset-md-2 col-md-8'))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pageNum])
+    
+    try{
+        document.querySelector("#navbarTop .active").classList.remove('active')
+    }
+    catch(e){
+    }
 
   
     return (
